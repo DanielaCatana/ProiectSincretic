@@ -25,6 +25,20 @@ void afisare_Regine(){
     
 }
 
+void back(int k){
+    if(k == 8) {
+        afisare_Regine();
+    }
+    else {
+        for (int i =0; i < 8; i++) {
+            dame[k] = i;
+            if (verificare_Consistenta(k)) {
+                back(k+1);
+            }
+        }
+    }
+}
+
 int verificare_Consistenta(int nr){
     for(int i=0; i<nr; i++) {
         if(dame[i] == dame[nr])
@@ -36,8 +50,6 @@ int verificare_Consistenta(int nr){
     }
     return 1;
 }
-
-
 
 int main() {
     
