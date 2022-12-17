@@ -19,9 +19,25 @@ void afisare_Regine(){
                 printf("* ");
             }
         }
+        printf("\n");
     }
+    printf("\n");
     
 }
+
+int verificare_Consistenta(int nr){
+    for(int i=0; i<nr; i++) {
+        if(dame[i] == dame[nr])
+            return 0;
+        if ((dame[i] - dame[nr]) == (nr = i)) 
+            return 0;
+        if ((dame[nr] - dame[i]) == (nr - i))
+            return 0;
+    }
+    return 1;
+}
+
+
 
 int main() {
     
