@@ -1,9 +1,10 @@
 
 //Problema care rezolva asezarea a "n" dame(regine) pe tabla de sah
 #include <stdio.h>
+#include <time.h>
 
 //constanta unde definim numarul de dame. Daca se doreste un alt numar, se schimba valoarea aici
-#define NR_DAME 8
+#define NR_DAME 7
 
 //vector unde salvam damele
 int dame[NR_DAME];
@@ -65,9 +66,15 @@ int verificare_Consistenta(int nr){
 Se apeleaza functia de backtrking (incepem de la pozitia 0) pentru generarea tuturor solutiilor*/
 int main() {
     
+     clock_t t;
+    t = clock();
+    
     back(0);
     
-    printf("Pentru a aseza %d dame pe tabla de sah exista %d variante.",NR_DAME,varianta-1);
+    t = clock() - t;
+    double durata = ((double)t)/CLOCKS_PER_SEC; // secunde
+    
+    printf("Pentru a aseza %d dame pe tabla de sah exista %d variante si dureaza %lf.",NR_DAME,varianta-1, durata);
     
     return 0;
 }
