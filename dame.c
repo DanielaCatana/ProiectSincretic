@@ -4,7 +4,7 @@
 #include <time.h>
 
 //constanta unde definim numarul de dame. Daca se doreste un alt numar, se schimba valoarea aici
-#define NR_DAME 7
+#define NR_DAME 8
 
 //vector unde salvam damele
 int dame[NR_DAME];
